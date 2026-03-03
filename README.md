@@ -249,20 +249,12 @@ Exchange rates reflect **February 2026** values and can be updated in the sideba
 
 ```
 ISTVEL/
-├── app_v4.py                  # Main Streamlit application (~2,900 lines)
+├── ISTVEL.py                  # Main Streamlit application (~2,900 lines)
 ├── requirements.txt           # Python dependencies
 ├── README.md
 ├── examples/
 │   ├── kadikoy_jan2025_0800/  # Kadıköy example scenario
 │   └── fatih_jan2025_0800/    # Fatih example scenario
-└── figures/                   # Paper figures (for reference)
-    ├── fig0_arch.pdf
-    ├── fig3_dashboard_comparison.pdf
-    ├── fig5_fleet_summary.pdf
-    ├── fig6_timeloss_fixed.pdf
-    ├── fig8_istvel_dashboard_map.pdf
-    └── fig9_istvel_results_dashboard.pdf
-```
 
 ---
 
@@ -286,8 +278,6 @@ https://data.ibb.gov.tr/api/3/action/datastore_search
 **Emre Akıskalıoğlu** — Research Assistant, Department of Mechanical Engineering, Faculty of Technology, Marmara University, Istanbul, Turkey  
 ✉ emre.akiskalioglu@marmara.edu.tr *(corresponding author)*  
 🔗 [github.com/emreakiskali](https://github.com/emreakiskali)
-
-**Mustafa Atmaca** — Professor, Department of Mechanical Engineering, Faculty of Technology, Marmara University, Istanbul, Turkey
 
 ---
 
