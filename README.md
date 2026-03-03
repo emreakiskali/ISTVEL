@@ -276,7 +276,7 @@ https://data.ibb.gov.tr/api/3/action/datastore_search
 ## Author
 
 **Emre Akıskalıoğlu** — Research Assistant, Department of Mechanical Engineering, Faculty of Technology, Marmara University, Istanbul, Turkey  
-✉ emre.akiskalioglu@marmara.edu.tr *(corresponding author)*  
+✉ emre.akiskalioglu@marmara.edu.tr
 🔗 [github.com/emreakiskali](https://github.com/emreakiskali)
 
 ---
