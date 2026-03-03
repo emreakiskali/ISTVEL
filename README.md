@@ -135,11 +135,11 @@ The app opens at `http://localhost:8501`.
 
 ### Phase 1 — Generate a SUMO Package
 
-1. **Select data** in the sidebar: choose month, day, and hour from the IMM portal (or upload your own OSM `.osm` file).
+1. **Select data** in the sidebar: choose month, day, and hour from the IMM portal.
 2. **Configure fleet parameters:**
    - Fleet mode: `EV`, `FUEL`, or `HYBRID`
    - Charging station toggle: interval (km), power (kW), efficiency, berth length (m)
-   - Hybrid EV ratio (default 50 %)
+   - Hybrid EV ratio (default 40 %)
 3. **Click "Generate SUMO Package"** — the app fetches IMM traffic data, builds the OSM network, synthesises connection-valid routes, and packages everything as a `.zip`.
 4. **Download the `.zip`**, unzip, and run SUMO:
 
@@ -193,7 +193,7 @@ These packages can be used to reproduce the paper results or as starting templat
 
 ## For Automotive Engineers & Fleet Operators
 
-ISTVEL's analysis layer is decoupled from the simulation infrastructure. Vehicle specifications are exposed as plain Python constants in `app_v4.py`:
+ISTVEL's analysis layer is decoupled from the simulation infrastructure. Vehicle specifications are exposed as plain Python constants in `ISTVEL.py`:
 
 ```python
 # BEV vType parameters — replace with your vehicle's specs
@@ -253,8 +253,8 @@ ISTVEL/
 ├── requirements.txt           # Python dependencies
 ├── README.md
 ├── examples/
-│   ├── kadikoy_jan2025_0800/  # Kadıköy example scenario
-│   └── fatih_jan2025_0800/    # Fatih example scenario
+│   ├── kadikoy_jan2025_0800.zip/  # Kadıköy example scenario
+│   └── fatih_jan2025_0800.zip/    # Fatih example scenario
 
 ---
 
@@ -275,7 +275,8 @@ https://data.ibb.gov.tr/api/3/action/datastore_search
 
 ## Author
 
-**Emre Akıskalıoğlu** — Research Assistant, Department of Mechanical Engineering, Faculty of Technology, Marmara University, Istanbul, Turkey  
+**Emre Akıskalıoğlu** — Research Assistant, Department of Mechanical Engineering, Faculty of Technology,
+Marmara University, Istanbul, Turkey  
 ✉ emre.akiskalioglu@marmara.edu.tr
 🔗 [github.com/emreakiskali](https://github.com/emreakiskali)
 
