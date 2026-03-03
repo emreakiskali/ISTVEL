@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<meandata>
+  <interval begin="8:00:00" end="9:00:00" id="ibb_traffic">
+    <edge id="256098105_3235202099_0" speed="20.00" departed="204" sampledSeconds="3600.0"/>
+    <edge id="316974255_882554698_0" speed="28.00" departed="73" sampledSeconds="3600.0"/>
+    <edge id="412289936_487079712_0" speed="22.00" departed="99" sampledSeconds="3600.0"/>
+    <edge id="487079302_882267697_0" speed="32.00" departed="394" sampledSeconds="3600.0"/>
+    <edge id="1036040786_1036041045_0" speed="31.00" departed="124" sampledSeconds="3600.0"/>
+    <edge id="1036041405_1058894180_0" speed="57.00" departed="223" sampledSeconds="3600.0"/>
+    <edge id="1057574922_1057574934_0" speed="40.00" departed="76" sampledSeconds="3600.0"/>
+    <edge id="1058996198_1058995839_0" speed="24.00" departed="103" sampledSeconds="3600.0"/>
+    <edge id="1059137279_1059137411_0" speed="23.00" departed="266" sampledSeconds="3600.0"/>
+    <edge id="1059239820_1059239847_0" speed="25.00" departed="210" sampledSeconds="3600.0"/>
+    <edge id="1059526784_12022588413_0" speed="26.00" departed="173" sampledSeconds="3600.0"/>
+    <edge id="1060106980_1060106889_0" speed="20.00" departed="183" sampledSeconds="3600.0"/>
+    <edge id="1061623124_1061623161_0" speed="20.00" departed="137" sampledSeconds="3600.0"/>
+    <edge id="1936903879_2370472382_0" speed="12.00" departed="27" sampledSeconds="3600.0"/>
+    <edge id="2370759050_2370759049_0" speed="18.00" departed="45" sampledSeconds="3600.0"/>
+    <edge id="3081510957_3081510970_0" speed="19.00" departed="19" sampledSeconds="3600.0"/>
+    <edge id="4286601056_3270661432_0" speed="21.00" departed="207" sampledSeconds="3600.0"/>
+    <edge id="11889637705_2370650502_0" speed="53.00" departed="289" sampledSeconds="3600.0"/>
+    <edge id="12723110486_1055512722_0" speed="28.00" departed="85" sampledSeconds="3600.0"/>
+    <edge id="13433929613_2370393238_0" speed="51.00" departed="237" sampledSeconds="3600.0"/>
+  </interval>
+</meandata>
