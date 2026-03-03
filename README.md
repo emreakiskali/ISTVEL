@@ -4,7 +4,7 @@
 
 [![Python](https://img.shields.io/badge/Python-3.12-3776ab?logo=python&logoColor=white)](https://python.org)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.32-ff4b4b?logo=streamlit&logoColor=white)](https://streamlit.io)
-[![SUMO](https://img.shields.io/badge/SUMO-≥1.19-00b4d8)](https://sumo.dlr.de)
+[![SUMO](https://img.shields.io/badge/SUMO-≥1.20-00b4d8)](https://sumo.dlr.de)
 [![License](https://img.shields.io/badge/License-MIT-22c55e)](LICENSE)
 
 ---
@@ -13,7 +13,9 @@
 
 ISTVEL bridges the gap between raw urban traffic sensor data and actionable fleet-electrification analysis. It ingests **hourly loop-detector records** from the Istanbul Metropolitan Municipality (IMM) open-data portal, synthesises a SUMO-ready simulation package, and delivers a multi-fleet comparison dashboard — all without requiring manual O-D matrix construction or route pre-processing.
 
-The framework was developed and validated on the **Kadıköy district of Istanbul** (3.2 km², ~2,950 vehicles, January 2025 08:00–09:00) and is designed to generalise to any city whose road network is available on OpenStreetMap.
+The framework was developed and validated on the **Kadıköy district of Istanbul** (3.2 km², ~2,950 vehicles, January 2025 08:00–09:00) and independently replicated on the **Fatih district** under identical protocol. It is designed to generalise to any city whose road network is available on OpenStreetMap. Example simulation packages for both districts are included in the repository under `examples/`.
+
+Simulations were conducted using **SUMO 1.25**.
 
 ```
 IMM Loop Detectors  ──▶  ISTVEL  ──▶  SUMO Package (.zip)
@@ -42,6 +44,7 @@ IMM Loop Detectors  ──▶  ISTVEL  ──▶  SUMO Package (.zip)
 | **Charging station placement** | Automatic spacing-based placement with `chargeInTransit` support |
 | **Multi-currency dashboard** | TRY / USD / EUR with live exchange rate inputs |
 | **Plug-and-play for SUMO users** | Upload any `tripinfo.xml` — no re-simulation required |
+| **Example scenarios included** | Ready-to-run Kadıköy and Fatih packages in `examples/` |
 
 ---
 
@@ -103,13 +106,14 @@ IMM Loop Detectors  ──▶  ISTVEL  ──▶  SUMO Package (.zip)
 ### Prerequisites
 
 - Python 3.12
-- [SUMO ≥ 1.19](https://sumo.dlr.de/docs/Downloads.php) with `sumo`, `netconvert`, `dfrouter` on `PATH`
+- [SUMO ≥ 1.20](https://sumo.dlr.de/docs/Downloads.php) with `sumo`, `netconvert`, `dfrouter` on `PATH`  
+  *(Simulations in this study were conducted using SUMO 1.25)*
 
 ### Setup
 
 ```bash
-git clone https://github.com/istvel/istvel.git
-cd istvel
+git clone https://github.com/emreakiskali/ISTVEL.git
+cd ISTVEL
 
 python -m venv .venv
 source .venv/bin/activate          # Windows: .venv\Scripts\activate
@@ -166,6 +170,24 @@ Upload the SUMO output files in the corresponding dashboard tabs:
 | **Charging Stations** | `chargingstations_output.xml` (+ optional `tripinfo.xml`) | Per-station energy, events, cost/100 km |
 
 > **Tip for existing SUMO users:** If you already have a `tripinfo.xml` from any prior simulation, you can skip Phase 1 entirely and go straight to the analysis tabs. Just adjust the vehicle parameters (mass, drag, battery capacity) in the Python source to match your vType.
+
+---
+
+## Example Scenarios
+
+Ready-to-run simulation packages for both validated districts are available in the `examples/` directory:
+
+```
+examples/
+├── kadikoy_jan2025_0800/     # Kadıköy, 08:00–09:00, January 2025 (~2,950 vehicles)
+│   ├── sumo_package.zip      # BEV, ICEV, MIX, BEV+CS configurations
+│   └── tripinfo/             # Pre-computed tripinfo.xml outputs for all four fleets
+└── fatih_jan2025_0800/       # Fatih, 08:00–09:00, January 2025 (~3,174 vehicles)
+    ├── sumo_package.zip
+    └── tripinfo/
+```
+
+These packages can be used to reproduce the paper results or as starting templates for new districts. Simply unzip and run with `sumo -c simulation.sumocfg`, or upload the included `tripinfo.xml` files directly to the dashboard without re-running SUMO.
 
 ---
 
@@ -226,10 +248,13 @@ Exchange rates reflect **February 2026** values and can be updated in the sideba
 ## Project Structure
 
 ```
-istvel/
+ISTVEL/
 ├── app_v4.py                  # Main Streamlit application (~2,900 lines)
 ├── requirements.txt           # Python dependencies
 ├── README.md
+├── examples/
+│   ├── kadikoy_jan2025_0800/  # Kadıköy example scenario
+│   └── fatih_jan2025_0800/    # Fatih example scenario
 └── figures/                   # Paper figures (for reference)
     ├── fig0_arch.pdf
     ├── fig3_dashboard_comparison.pdf
@@ -256,27 +281,11 @@ https://data.ibb.gov.tr/api/3/action/datastore_search
 
 ---
 
-## Citation
-
-If you use ISTVEL in your research, please cite:
-
-```bibtex
-@article{akiskalioglu2025istvel,
-  title   = {{ISTVEL}: Connection-Aware Microscopic Simulation Framework
-             for Urban Fleet Electrification},
-  author  = {Ak{\i}skal{\i}o{\u{g}}lu, Emre and Atmaca, Mustafa},
-  journal = {IEEE Open Journal of Intelligent Transportation Systems},
-  year    = {2025},
-  note    = {Under review}
-}
-```
-
----
-
 ## Authors
 
 **Emre Akıskalıoğlu** — Research Assistant, Department of Mechanical Engineering, Faculty of Technology, Marmara University, Istanbul, Turkey  
-✉ emre.akiskalioglu@marmara.edu.tr *(corresponding author)*
+✉ emre.akiskalioglu@marmara.edu.tr *(corresponding author)*  
+🔗 [github.com/emreakiskali](https://github.com/emreakiskali)
 
 **Mustafa Atmaca** — Professor, Department of Mechanical Engineering, Faculty of Technology, Marmara University, Istanbul, Turkey
 
@@ -286,4 +295,4 @@ If you use ISTVEL in your research, please cite:
 
 This project is released under the **MIT License** — see [LICENSE](LICENSE) for details.
 
-Contributions, bug reports, and feature requests are welcome via [Issues](https://github.com/istvel/istvel/issues).
+Contributions, bug reports, and feature requests are welcome via [Issues](https://github.com/emreakiskali/ISTVEL/issues).
