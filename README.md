@@ -124,7 +124,7 @@ pip install -r requirements.txt
 ### Run
 
 ```bash
-streamlit run app_v4.py
+streamlit run ISTVEL.py
 ```
 
 The app opens at `http://localhost:8501`.
