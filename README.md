@@ -1,11 +1,14 @@
 # ISTVEL — Istanbul Simulation Tool for Vehicle Electrification
 
 > **An open-source, end-to-end framework for microscopic EV fleet simulation using real-world traffic data.**
+>
+> **Cite as: Akıskalıoğlu, E.; Atmaca, M. ISTVEL: Connection-Aware Microscopic Simulation Framework for Fleet Electrification and CO2 Assessment. Appl. Sci. 2026, 16, 6971. https://doi.org/10.3390/app16146971 **
 
 [![Python](https://img.shields.io/badge/Python-3.12-3776ab?logo=python&logoColor=white)](https://python.org)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.32-ff4b4b?logo=streamlit&logoColor=white)](https://streamlit.io)
 [![SUMO](https://img.shields.io/badge/SUMO-≥1.20-00b4d8)](https://sumo.dlr.de)
 [![License](https://img.shields.io/badge/License-MIT-22c55e)](LICENSE)
+[![Article & Citation](https://www.mdpi.com/2076-3417/16/14/6971) 
 
 ---
 
